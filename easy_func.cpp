@@ -1,3 +1,5 @@
+#include "easy_func.h"
+#include "middle_func.h"
 long long itc_len(string str1) {
   long long kol=0;
   for (int i=0; str1[i]!='\0'; i++)
