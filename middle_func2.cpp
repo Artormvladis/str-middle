@@ -61,3 +61,17 @@ string itc_Cezar(string str, int a1)
     }
     return b1;
 }
+string itc_rmFreeSpace(string str)
+{
+    long long len=itc_len(str);
+	string a1="", res="";
+	for (int i=0; i<len; i++)
+        if (!((str[i]==' ') && (str[i+1]==' ')))
+            a1+=str[i];
+	len=itc_len(a1);
+	for (int a2=0; a2<len; a2++)
+        if (!((a2==len-1) && (a1[a2]==' ')))
+            res+=a1[a2];
+	return res;
+
+}
