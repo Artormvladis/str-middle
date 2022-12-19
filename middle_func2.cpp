@@ -40,23 +40,6 @@ char itc_sameChar(string str)
 bool itc_isFirstInSecond(string a1, string a2){
     return itc_find_str(a1, a2)==-1;
 }
-string itc_slice_str(string str, int a1, int a2){
-    string res="";
-    if (a2>=itc_len(str))
-        a2=itc_len(str)-1;
-    if(a1>a2){
-        return str;
-    }else if(a1==(itc_len(str)-1)){
-        res+=str[itc_len(str)-1];
-        return res;
-    }else{
-        for (long long i=a1; i<=a2; i++){
-            res+=str[i];
-        }
-        return res;
-    }
-    return "-1";
-}
 string itc_Cezar(string str, int a1)
 {
     if (a1 == 0) return str;
