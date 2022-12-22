@@ -1,5 +1,5 @@
-#include "easy_func.h"
-#include "middle_func.h"
+#include "easy_str.h"
+#include "middle_str.h"
 string itc_maxCharWord(string str)
 {
     long long max=0, len=itc_len(str);
