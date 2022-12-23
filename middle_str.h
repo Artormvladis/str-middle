@@ -3,9 +3,9 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
-bool itc_isDigit(unsigned char a);
-unsigned char itc_toUpper(unsigned char a);
-unsigned char itc_changeCase(unsigned char a);
+bool itc_isDigit(unsigned char a1);
+unsigned char itc_toUpper(unsigned char a1);
+unsigned char itc_changeCase(unsigned char a1);
 bool itc_compare(string a1, string a2);
 int itc_countWords(string str);
 string itc_maxCharWord(string str);
