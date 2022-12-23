@@ -10,8 +10,8 @@ unsigned char itc_toUpper(unsigned char a1){
 }
 unsigned char itc_changeCase(unsigned char a1){
     if (a1<='z' && a1>='a')
-        return c - ' ';
-    else if(a1<='Z' && a1>= 'A')
+        return a1-' ';
+    else if(a1<='Z' && a1>='A')
         return a1+' ';
     else
         return a1;
