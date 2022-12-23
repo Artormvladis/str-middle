@@ -12,7 +12,7 @@ string itc_maxCharWord(string str)
             a1+=str[i];
         else if (itc_len(a1)>max)
         {
-            max=itc_len(a);
+            max=itc_len(a1);
             a2=a1;
             a1="";
         }
