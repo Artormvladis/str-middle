@@ -20,7 +20,6 @@ bool itc_compare(string a1, string a2){
     for (long long i=0; i<=itc_len(a1); i++) {
         if (a1[i]!=a2[i])
             return false;
-            break;
     }
     return true;
 }
