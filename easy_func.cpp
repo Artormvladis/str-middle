@@ -13,9 +13,9 @@ int itc_find_str(string str1, string str2) {
     if (str1[i]==str2[0]) {
       long long a1=i;
       long long a2=0;
-      for (a2<len2 && a1<len1; a2++, a1++) {
-        if (str1[a1]!=str2[a2])
-          break;
+      while (a2<len2 && a1<len1) {
+        a1++;
+        a2++;
       }
       if (a2==len2)
         return i;
