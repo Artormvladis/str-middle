@@ -15,5 +15,5 @@ string itc_Cezar(string str, int k);
 string itc_rmFreeSpace(string str);
 bool itc_isIp(string str);
 string itc_DecToBin(string str);
-string itc_decToBase(int num, int base);
+string itc_decToBase(int a1, int a2);
 #endif // MIDDLE_STR_H_INCLUDED
