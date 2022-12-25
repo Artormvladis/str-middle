@@ -1,5 +1,5 @@
 #include "middle_str.h"
-#include "easy_func.h"
+#include "easy_str.h"
 long long str_to_num(string a1){
     int b = 0;
     long long a2 = 0;
