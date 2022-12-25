@@ -21,6 +21,7 @@ string itc_maxCharWord(string str)
     }
     if (itc_len(a1)>max)
         a2=a1;
+    if (!itc_len(a2)) return "error";
     return a2;
 }
 char itc_sameChar(string str)
