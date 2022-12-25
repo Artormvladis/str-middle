@@ -32,8 +32,8 @@ string itc_DecToBin(string str){
             a1+=str[i];  
     }
 
-    a2+=itc_decToBase(a1_num(a1), 2);
-    return temp2;
+    a2+=itc_decToBase(str_to_num(a1), 2);
+    return a2;
 }
 string itc_decToBase(int a1, int a2){
     string b1="0123456789ABCDEF";
@@ -45,7 +45,7 @@ string itc_decToBase(int a1, int a2){
     }
     while(a1>0){
         a3=a1%a2;
-        res=b1[a3]+res;
+        res=b1[a3];
         a1/=a2;
     }
     return res;
