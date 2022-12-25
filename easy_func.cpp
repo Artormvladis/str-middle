@@ -9,20 +9,17 @@ long long itc_len(string str1) {
 int itc_find_str(string str1, string str2) {
   long long len1=itc_len(str1);
   long long len2=itc_len(str2);
-  for (long long i=0; i<len1; i++) {
+  for (unt i=0; i<len1; i++) {
     if (str1[i]==str2[0]) {
-      long long a1=i;
-      long long a2=0;
-      while (a2<len2 && a1<len1) {
-        a1++;
-        a2++;
-      }
-      if (a2==len2)
-        return i;
+      long long a1=0;
+      for (long long r = i; r < len1 && a1 < len2; r++, a1++){
+                if (str1[r] != str2[j]) return 0;
+            }
+        }
     }
-  }
-  return -1;
+    return -1;
 }
+
 string itc_slice_str(string str, int a1, int a2){
     string res="";
     if (a2>= itc_len(str))
