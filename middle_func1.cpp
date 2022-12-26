@@ -15,3 +15,16 @@ bool itc_compare(string a1, string a2){
     }
     return true;
 }
+char itc_sameChar(string str)
+{
+    for (long long i=0; str[i]!='\0'; ++i)
+    {
+        if ((str[i]>='A' && str[i]<='Z') || (str[i]>='a' && str[i]<='z'))
+        {
+            for (long long a1=0; str[a1]!='\0'; a1++)
+                if (str[a1]==str[i])
+                    return str[a1];
+        }
+    }
+    return '0';
+}
