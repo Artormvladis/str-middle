@@ -43,6 +43,19 @@ string itc_maxCharWord(string str)
     if (!itc_len(a2)) return "error";
     return a2;
 }
+int itc_find_str(string str1, string str2) {
+  long long len1=itc_len(str1);
+  long long len2=itc_len(str2);
+  for (int i=0; i<len1; i++) {
+    if (str1[i]==str2[0]) {
+      long long a1=0;
+      for (long long r = i; r < len1 && a1 < len2; r++, a1++){
+                if (str1[r] != str2[a1]) return 0;
+            }
+        }
+    }
+    return -1;
+}
 bool itc_isFirstInSecond(string a1, string a2){
     return itc_find_str(a1, a2)==-1;
 }
@@ -67,17 +80,4 @@ string itc_Cezar(string str, int a1)
     }
     return b1;
 }
-string itc_rmFreeSpace(string str)
-{
-    long long len=itc_len(str);
-	string a1="", res="";
-	for (int i=0; i<len; i++)
-        if (!((str[i]==' ') && (str[i+1]==' ')))
-            a1+=str[i];
-	len=itc_len(a1);
-	for (int a2=0; a2<len; a2++)
-        if (!((a2==len-1) && (a1[a2]==' ')))
-            res+=a1[a2];
-	return res;
 
-}
