@@ -23,21 +23,3 @@ bool itc_compare(string a1, string a2){
     }
     return true;
 }
-int itc_countWords(string str)
-{
-    int a1=0;
-    bool b1=true;
-    for (long long i=0; str[i]!='\0'; ++i)
-    {
-        if ((str[i]<65 || (str[i]>90 && str[i]<97) || str[i]>122) && str[i]!=' ')
-            b1=false;
-        if (str[i]==' ' && b1==true)
-            a1+=1;
-        if (str[i]==' ' && b1==false)
-            b1=true;
-    }
-    if (b1==false)
-        return a1;
-
-    return a1+1;
-}
