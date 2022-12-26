@@ -1,59 +1,94 @@
 #include "easy_str.h"
 #include "middle_str.h"
+string itc_slice_str(string str, int start, int endd){
+    string res = "";
+    if (endd >= itc_len(str))
+        endd = itc_len(str) - 1;
+    if(start > endd){
+        return str;
+    }else if(start == (itc_len(str) - 1)){
+        res += str[itc_len(str) - 1];
+        return res;
+    }else{
+        for (long long i = start; i <= endd; i++){
+            res += str[i];
+        }
+        return res;
+    }
+    return "-1";
+}
+
+
+
+string itc_Cezar(string str, int k)
+{
+    if (k == 0) return str;
+    int i = 0;
+    string ans = "";
+    while (str[i] != '\0') {
+        if (str[i] >= 'a' && str[i] <= 'z') {
+            if (str[i] + k > 'z') ans += str[i] + k - 26;
+            else if (str[i] + k < 'a') ans += str[i] + k + 26;
+            else ans += str[i] + k;
+        }
+        else if (str[i] >= 'A' && str[i] <= 'Z') {
+            if (str[i] + k > 'Z') ans += str[i] + k - 26;
+            if (str[i] + k < 'A') ans += str[i] + k + 26;
+            else ans += str[i] + k;
+        }
+        else ans += str[i];
+        i += 1;
+    }
+    return ans;
+}
+
+string itc_rmFreeSpace(string str)
+{
+    long long len = itc_len(str);
+    long long c = 0;
+    if (str == "") return str;
+    else if (str[0] == ' ') c = 1;
+    else c = 0;
+    while ((str[c] == ' ') && (c < len)) c++;
+    string res_buff = "";
+    for (int i = c; i < len; i++) {
+        if ((i != len - 1) && ((str[i] != ' ') || (str[i + 1] != ' '))) res_buff += str[i];
+    }
+    if (str[len - 1] != ' ') res_buff += str[len - 1];
+    return res_buff;
+}
+
 bool itc_isIp(string str)
 {
-    int a1=1;
-	long long len=itc_len(str),a2=1;
+    int check = 1;
+	long long len = itc_len(str), wordcount = 1;
 	for (int i = 0; i < len; ++i) {
 		if ((str[i] >= '0') && (str[i] <= '9')) {
-			a1=a1*10+str[i]-48;
+			check = check * 10 + str[i] - 48;
 		}
 		else {
-			if ((str[i]!='.') || (a1==1) || (a1%1000>255) || (a1%1000<0))
+			if ((str[i] != '.') || (check == 1) || (check % 1000 > 255) || (check % 1000 < 0))
                 return 0;
-			a1=1;
-			a2++;
+			check = 1;
+			wordcount++;
 		}
 	}
-	if (a2!=4)
+	if (wordcount != 4)
         return 0;
 	return 1;
 }
-string itc_decToBase(int a1, int a2){
-    string b1="0123456789ABCDEF";
-    string res="";
-    int a3=0;
-    if (a1<0){
-        res="-";
-        a1*=-1;
-    }
-    while(a1>0){
-        a3=a1%a2;
-        res=b1[a3];
-        a1/=a2;
-    }
-    return res;
-}
-bool itc_isDigit(unsigned char a1)
-{
-	return((a1>=48) && (a1<=57));
-}
-unsigned char itc_toUpper(unsigned char a1){
-    if(a1>=97 && a1<=122) return a1-32;
-    return a1;
-}
-string itc_DecToBin(string str){
-    string a1="", a2="";
-    long long a1_num=0;
-    for(long long i=0; str[i]!='\0'; ++i){
-        if (str[i]<'0' || str[i]>'9'){
-            a2+=itc_decToBase(str_to_num(a1), 2)+str[i];
-            a1="";
-        }
-        if (itc_isDigit(str[i]))
-            a1+=str[i];  
-    }
 
-    a2+=itc_decToBase(str_to_num(a1), 2);
-    return a2;
+string itc_DecToBin(string str){
+    string temp = "", temp2 = "";
+    long long temp_num = 0;
+    for(long long i = 0; str[i] != '\0'; ++i){
+        if (str[i] < '0' || str[i] > '9'){
+            temp2 += itc_decToBase(str_to_num(temp), 2) + str[i];
+            temp = "";
+        }
+        if ( itc_isDigit(str[i]))
+            temp += str[i];  
+    }
+    temp2 += itc_decToBase(str_to_num(temp), 2);
+    return temp2;
 }
