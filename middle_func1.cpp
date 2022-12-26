@@ -1,4 +1,3 @@
-#include "easy_str.h"
 #include "middle_str.h"
 long long itc_len(string str) {
   long long kol = 0;
