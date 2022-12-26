@@ -34,6 +34,14 @@ string itc_decToBase(int a1, int a2){
     }
     return res;
 }
+bool itc_isDigit(unsigned char a1)
+{
+	return((a1>=48) && (a1<=57));
+}
+unsigned char itc_toUpper(unsigned char a1){
+    if(a1>=97 && a1<=122) return a1-32;
+    return a1;
+}
 string itc_DecToBin(string str){
     string a1="", a2="";
     long long a1_num=0;
