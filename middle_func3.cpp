@@ -25,7 +25,7 @@ string itc_DecToBin(string str){
     long long a1_num=0;
     for(long long i=0; str[i]!='\0'; ++i){
         if (str[i]<'0' || str[i]>'9'){
-            a2+=itc_decToBase(a1_num(a1), 2)+str[i];
+            a2+=itc_decToBase(str_to_num(a1), 2)+str[i];
             a1="";
         }
         if (itc_isDigit(str[i]))
