@@ -1,4 +1,3 @@
-#include "easy_str.h"
 #include "middle_str.h"
 string itc_slice_str(string str, int start, int endd){
     string res = "";
