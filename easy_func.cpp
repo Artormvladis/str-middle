@@ -56,7 +56,7 @@ string itc_covert_num(int a1, int a2)
 			a1 /= a2;
 		}
 	}
-  int i = itc_len(otv1);
+  int i = itc_len(b1);
 	while (i > 0) {
 		i--;
 		b2 += b1[i];
