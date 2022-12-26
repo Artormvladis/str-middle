@@ -17,31 +17,21 @@ string itc_slice_str(string str, int start, int endd){
     }
     return "-1";
 }
-
-
-
-string itc_Cezar(string str, int k)
-{
-    if (k == 0) return str;
-    int i = 0;
-    string ans = "";
-    while (str[i] != '\0') {
-        if (str[i] >= 'a' && str[i] <= 'z') {
-            if (str[i] + k > 'z') ans += str[i] + k - 26;
-            else if (str[i] + k < 'a') ans += str[i] + k + 26;
-            else ans += str[i] + k;
-        }
-        else if (str[i] >= 'A' && str[i] <= 'Z') {
-            if (str[i] + k > 'Z') ans += str[i] + k - 26;
-            if (str[i] + k < 'A') ans += str[i] + k + 26;
-            else ans += str[i] + k;
-        }
-        else ans += str[i];
-        i += 1;
+string itc_decToBase(int num, int base){
+    string alph = "0123456789ABCDEF";
+    string res = "";
+    int tmp = 0;
+    if (num < 0){
+        res = "-";
+        num *= -1;
     }
-    return ans;
+    while(num > 0){
+        tmp = num % base;
+        res += alph[tmp];
+        num /= base;
+    }
+    return res;
 }
-
 string itc_rmFreeSpace(string str)
 {
     long long len = itc_len(str);
