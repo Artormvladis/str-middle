@@ -9,11 +9,11 @@ long long itc_len(string str1) {
 int itc_find_str(string str1, string str2) {
   long long len1=itc_len(str1);
   long long len2=itc_len(str2);
-  for (unt i=0; i<len1; i++) {
+  for (int i=0; i<len1; i++) {
     if (str1[i]==str2[0]) {
       long long a1=0;
       for (long long r = i; r < len1 && a1 < len2; r++, a1++){
-                if (str1[r] != str2[j]) return 0;
+                if (str1[r] != str2[a1]) return 0;
             }
         }
     }
