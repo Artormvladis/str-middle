@@ -82,7 +82,7 @@ string itc_maxCharWord(string str){
             }
         }
     }
-    if (str_number(rez)==false){
+    if (str_number(rez)==true){
         return "error";
     }
 }
