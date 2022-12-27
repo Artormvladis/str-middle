@@ -60,7 +60,7 @@ void perezapis(string str, string &rez){
 }
 bool str_number(string str){
     int a1;
-        for(a1=0; i<itc_len(str);a1++)
+        for(a1=0; a1<itc_len(str);a1++)
             if !(str[a1]>='A' && str[a1]<='Z' || str[a1]>='a' && str[a1]<='z')
                 return false;
     return true;
