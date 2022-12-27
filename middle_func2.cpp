@@ -75,4 +75,35 @@ char itc_sameChar(string str)
 bool itc_isFirstInSecond(string s1, string s2){
     return itc_find_str(s2, s1) != -1;
 }
-
+void perezapis(string str, string &rez){
+    rez="";
+    for(int i = 0; i<str_len(str); i++){
+        rez=rez+str[i];
+    }
+    rez = rez + '\0';
+}
+bool str_number(string str){
+    int a1;
+        for(a1=0; i<len_str(str);a1++)
+            if !(str[a1]>='A' && str[a1]<='Z' || str[a1]>='a' && str[a1]<='z')
+                return false;
+    return true;
+}
+string itc+maxCharWord(string str){
+    int i, len;
+    int max=0;
+    string rez="";
+    string new_str="";
+    for (i=0; i<str_len(str); i++)
+        if (str[i]!=' '){
+            new_str=new_str+str[i];
+        } else {
+            new_str = new_str + '\0';
+            len = str_len(new_str);
+            if (len>max){
+                perezapis(new_str, rez);
+                rez = rez+'\0';
+            }
+        }
+}
+               
