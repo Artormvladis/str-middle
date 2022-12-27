@@ -65,7 +65,7 @@ bool str_number(string str){
                 return false;
     return true;
 }
-string itc+maxCharWord(string str){
+string itc_maxCharWord(string str){
     int i, len;
     int max=0;
     string rez="";
